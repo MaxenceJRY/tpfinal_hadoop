@@ -20,7 +20,6 @@ public class RecommendationsMapper extends Mapper<Object, Text, Text, Text> {
         String user2 = users[1];
         String relationCount = tokens[1];
 
-        // Emit recommendations for both users
         userKey.set(user1);
         recommendation.set(user2 + ": " + relationCount);
         context.write(userKey, recommendation);
