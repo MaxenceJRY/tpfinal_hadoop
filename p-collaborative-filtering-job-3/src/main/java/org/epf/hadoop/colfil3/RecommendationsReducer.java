@@ -27,7 +27,7 @@ public class RecommendationsReducer extends Reducer<Text, Text, Text, Text> {
         topRecommendations = recommendationsList.subList(0, Math.min(MAX_RECOMMENDATIONS, recommendationsList.size()));
 
         String topRecommendationsString = String.join(", ", topRecommendations);
-        // Output the user and their top recommendations
+        
         context.write(key, new Text(topRecommendationsString));
     }
 }
